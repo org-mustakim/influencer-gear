@@ -42,7 +42,7 @@
   margin: 0px;
   padding: 0px;
 }
-body{
+header, main{
   max-width: 1200px;
   margin: 0px auto;
   margin-top: 35px;
@@ -88,10 +88,6 @@ nav{
 }
 /* .banner-photo{
   width: 100%;
-  height: 100%;
-  background: url(../images/Circle\ design.svg);
-  background-repeat: no-repeat;
-  background-position: right;
 } */
 .slogan{
   font-size: 3.3rem;
@@ -111,6 +107,13 @@ nav{
   color: #FFFFFF;
   background-color: #E02C6D;
 }
+.preebook-btn:hover{
+  cursor: pointer;
+  background-color: #FFFFFF;
+  color: #E02C6D;
+  border: 1.5px solid #E02C6D;
+  transition: all 0.8s;
+}
 
 /* Sponsor Section Styles */
 
@@ -121,14 +124,15 @@ nav{
   justify-content: center;
   align-items: center;
   height: 110px;
-  width: 1110px;
-  border-top: 1px solid rgba(128, 128, 128, 0.116);
-  border-bottom: 1px solid rgba(128, 128, 128, 0.116);
+  max-width: 1110px;
+  border-top: 1px solid rgba(192, 204, 218, 1);
+  border-bottom: 1px solid rgba(192, 204, 218, 1);
 }
 .sponsor-images{
   display: flex;
-  width: 986.47px;
+  max-width: 986.47px;
   justify-content: space-around;
+  gap: 60px;
 }
 
 /* Card Collection Styles */
@@ -147,6 +151,7 @@ nav{
   grid-template-columns: repeat(3, 1fr);
   row-gap: 30px;
   column-gap: 30px;
+  max-width: 1047px;
 }
 .card div h3{
   color: #18191F;
@@ -170,12 +175,12 @@ nav{
   height: 476px;
   width: 329px;
   border-radius: 8px;
-  box-shadow: 0px 0px 25px 4px rgba(0, 0, 0, 0.068);
+  box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.25);
   padding: 17px 15px;
 }
 .see-more{
   text-align: right;
-  width: 1047px;
+  max-width: 1047px;
   margin-top: 50px;
   /* border: 1px solid red; */
 }
@@ -188,7 +193,7 @@ nav{
 /* Featured Products Styles */
 
 .featured-products-image{
-  max-width: 404px;
+  max-width: 100%;
   margin-bottom: 100px;
 }
 .featured-products{
@@ -202,7 +207,7 @@ nav{
   margin-bottom: 16px;
 }
 .featured-products-description{
-  font-size: 16px;
+  font-size: 1rem;
   color: #6C6C6C;
   margin-bottom: 16px;
   max-width: 501px;
@@ -213,7 +218,14 @@ nav{
   color: #FFFFFF;
   background-color: #E02C6D;
   border: none;
-  font-size: 16px;
+  font-size: 1rem;
+}
+.join-btn:hover{
+  cursor: pointer;
+  background-color: #FFFFFF;
+  color: #E02C6D;
+  border: 1.5px solid #E02C6D;
+  transition: all 0.5s;
 }
 
 /* Footer Styles */
@@ -225,6 +237,7 @@ footer{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0px auto;
 }
 footer h4{
   color: #FFFFFF;
@@ -251,4 +264,76 @@ footer p{
   width: 32px;
   height: 32px;
   border-radius: 50%;
+}
+
+.social-icons div:hover{
+  cursor: pointer;
+  background-color: #FFFFFF;
+  color: #E02C6D;
+  border: 1.5px solid #E02C6D;
+  transition: all 0.5s;
+}
+
+@media screen and (max-width: 576px) {
+  header nav, .nav-list{
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+  }
+  .banner-section{
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+  }
+  .slogan,.banner-content {
+    align-items: center;
+  }
+  .banner-description{
+    /* width: 321px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .sponsor-container{
+    align-items: center;
+    border: none;
+  }
+  .sponsor-images{
+    flex-wrap: wrap;
+    gap: 30px;
+    border-top: none;
+  }
+  .card-collection{
+  grid-template-columns: 1fr;
+  row-gap: 30px;
+  place-items: center;
+  }
+  .card{
+    justify-content: center;
+    align-items: center;
+  }
+.featured-products{
+  display: flex;
+  align-items: center;
+  gap: 96px;
+  flex-direction: column-reverse;
+  }
+.see-more{
+  text-align: center;
+  }
+  .featured-products-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  .featured-products-title, .featured-products-description{
+    text-align: center;
+  }
+  body{
+    margin: 0px auto;
+  }
+  .banner-section{
+    background-image: none;
+  }
 }
